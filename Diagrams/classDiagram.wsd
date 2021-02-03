@@ -1,0 +1,38 @@
+@startuml interaction
+
+title Classes - Class Diagram
+
+class Projects{
+    string name
+    string description
+    string img
+}
+
+class Users{
+   string userName
+   string password
+   string img
+}
+
+class Task{
+   string name
+   string description
+   string img
+}
+
+class Columns{
+    string name
+}
+
+
+Projects "1" *-- "many" Columns
+Projects "1" *-- "many" Task
+Projects "1" *-- "many" Users
+
+Columns "1" *-- "many" Tasks
+Columns "1" *-- "many" Users
+
+Tasks "many" *-- "1" Users
+
+
+@enduml
