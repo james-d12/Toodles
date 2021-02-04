@@ -16,6 +16,8 @@ async function create(){
         Cid: 1,
         Uid: 1
     })
+
+    const projs = await classes.Project.findAll()
 }
 
 create()

@@ -1,3 +1,5 @@
+const db = require('./Server/Database/Populate')
+
 const express = require('express');
 const Handlebars = require('handlebars')
 const expressHandlebars = require('express-handlebars')
@@ -17,9 +19,7 @@ app.use(express.static('public/'))
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
-app.use(require('./Routes/Router'))
-
-
+app.use(require('./Server/Routes/Router'))
 
 app.listen(port, () => {
     console.log(`App listening at http://localhost:${port}`)
