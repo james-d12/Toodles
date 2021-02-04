@@ -2,8 +2,7 @@ const {Sequelize, DataTypes, Model} = require('sequelize');
 
 const sequelize = new Sequelize('database', 'username', 'password', {
     dialect: 'sqlite',
-    storage: './server/database/restaurant.sqlite',
-    logging: true
+    storage: './todo.sqlite'
 });
 
 class User extends Model {}
@@ -45,8 +44,8 @@ Project.init({
 });
 
 
-Task.hasOne(User, {as: 'user', foreignKey: 'user_id'});
-User.belongsTo(Task, {foreignKey: 'user_id'})
+User.hasOne(Task, {as: 'user', foreignKey: 'user_id'});
+Task.belongsTo(User, {foreignKey: 'user_id'})
 
 Column.hasMany(Task, {as: 'tasks', foreignKey: 'column_id'});
 Task.belongsTo(Column, {foreignKey: 'column_id'});
