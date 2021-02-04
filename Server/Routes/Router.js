@@ -12,7 +12,6 @@ router.get('/boards', Get.boardsPage)
 router.get('/boards/:id', Get.boardPage)
 
 router.post('/boards/new', Post.boardPageNew)
-
 router.put('/boards/:id/edit', Put.boardPageEdit)
 
 router.delete('/boards/:id/delete', Delete.boardPageDelete)
