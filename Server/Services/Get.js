@@ -29,5 +29,5 @@ exports.boardsPage = async(req, res) => {
  */
 exports.boardPage = async(req, res) => {
     const project = await Project.findByPk(req.params.id)
-    res.render('home')
+    res.render('Landing')
 }

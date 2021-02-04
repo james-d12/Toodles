@@ -1,7 +1,9 @@
 const { Project, Column, Task } = require("../Database/SequelizeClasses")
 
 /**
- * Takes a PUT request to edit a project board's details in the database. 
+ * Edit a board page from a PUT request.
+ * @param {Request} req - The request that the caller has sent to the server.
+ * @param {Response} res - The reponse the server will give.
  */
 exports.boardPageEdit = async(req, res) => {
     const { name, description, image } = req.body 
@@ -14,4 +16,14 @@ exports.boardPageEdit = async(req, res) => {
     })
     
     res.redirect(`/boards/${req.params.id}`)
+}
+
+/**
+ * Edit a task from a PUT request.
+ * @param {Request} req - The request that the caller has sent to the server.
+ * @param {Response} res - The reponse the server will give.
+ */
+exports.taskEdit = async(req, res) => {
+    const task = await Task.findByPk(req.params.tid)
+    console.log("[INFO]: Editing Task: ", task)
 }
