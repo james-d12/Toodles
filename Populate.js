@@ -1,4 +1,4 @@
-const classes = require('./SequelizeClasses');
+const classes = require('./Server/Database/SequelizeClasses');
 
 async function create(){
     await classes.sequelize.sync({ force: true });

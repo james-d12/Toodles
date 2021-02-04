@@ -1,5 +1,3 @@
-const db = require('./Server/Database/Populate')
-
 const express = require('express');
 const Handlebars = require('handlebars')
 const expressHandlebars = require('express-handlebars')
