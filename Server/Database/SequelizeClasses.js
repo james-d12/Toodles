@@ -12,7 +12,7 @@ class Project extends Model {}
 
 User.init({
     username: DataTypes.STRING,
-    password: DataTypes.TEXT,
+    password: DataTypes.STRING,
     image: DataTypes.STRING,
 }, 
 {
