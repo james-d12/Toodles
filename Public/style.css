@@ -1,9 +1,25 @@
 * 
 
 h1 {
-    font-family: "Georgia"
+    font-family: "Georgia";
+    color: black;
+}
+
+p {
+    font-family: "Georgia";
+    color: black;
 }
 
 body {
     background-color: yellow;
+}
+
+div {
+    border-radius: 25px;
+    box-shadow:rgba(0, 0, 0, 0.274) -5px,5px;
+    padding: 10px;
+}
+
+.button {
+    border-radius: 25px;
 }
