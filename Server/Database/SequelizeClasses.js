@@ -17,7 +17,8 @@ User.init({
 }, 
 {
     sequelize,
-    timestamps: false
+    timestamps: false,
+    primaryKey: true
 });
 
 Task.init({
@@ -27,7 +28,8 @@ Task.init({
 }, 
 {
     sequelize,
-    timestamps: false
+    timestamps: false,
+    primaryKey: true
 });
 
 Column.init({
@@ -35,7 +37,8 @@ Column.init({
 }, 
 {
     sequelize,
-    timestamps: false
+    timestamps: false,
+    primaryKey: true
 });
 
 Project.init({
@@ -45,7 +48,8 @@ Project.init({
 }, 
 {
     sequelize,
-    timestamps: false
+    timestamps: false,
+    primaryKey: true
 });
 
 
