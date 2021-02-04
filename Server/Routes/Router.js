@@ -2,8 +2,20 @@ const express = require('express')
 const router = express.Router()
 const { check, validationResult } = require('express-validator');
 
-router.get('/', async (req, res) => {
-    res.render('home')
-});
+const Get = require('../Services/Get')
+const Post = require('../Services/Post')
+const Put = require('../Services/Put')
+const Delete = require('../Services/Delete')
+
+router.get('/', Get.homePage)
+router.get('/boards', Get.boardsPage)
+router.get('/boards/new', Get.boardPageNew)
+router.get('/boards/:id', Get.boardPage)
+router.get('/boards/:id/edit', Get.boardPageEdit)
+
+router.post('/boards/new', Post.boardPageNew)
+
+router.put('/boards/:id/edit', Put.boardPageEdit)
+router.delete('/boards/:id/delete', Delete.boardPageDelete)
 
 module.exports = router
