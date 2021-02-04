@@ -12,14 +12,11 @@ const handlebars = expressHandlebars({
 
 app.engine('handlebars', handlebars)
 app.set('view engine', 'handlebars')
-// Should 'public/' be 'public' instead?
-app.use(express.static('public/'))
+app.use(express.static('Public/'))
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
 app.use(require('./Server/Routes/Router'))
-
-
 
 app.listen(port, () => {
     console.log(`App listening at http://localhost:${port}`)

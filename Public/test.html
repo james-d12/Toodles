@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Toodles</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="form.css">
+    </head>
+
+
+    <body>
+        <div id="add-project-popup" class="input-box">
+            <form class="add-project-form" action="/boards/new" method="POST">
+                <div class="user-box">
+                    <input id="add-project-name-input" type="text" name="name" minlength="3" maxlength="40" required>
+                    <label for="name"><b>Name</b></label>
+                </div>
+
+                <div class="user-box">
+                    <input id="add-project-description-input" type="text" name="description" minlength="3" maxlength="300" required>
+                    <label for="description"><b>Description</b></label>
+                </div>
+    
+                <div class="user-box">
+                    <input id="add-project-url-input" type="url" name="image" pattern="https://.*" required>
+                    <label for="image"><b>Image</b></label>
+                </div>
+            </form> 
+            <button id="add-project-button" class="input-button" type="submit" form="add-project-form"> <B>Add</B> </button>
+            <button id="close-project-button" class="input-button" onclick="closeFormAdd();"> <B>Close</B> </button>
+        </div>
+
+        <div id="update-project-popup" class="input-box">
+            <form class="add-project-form" action="/boards/new" method="POST">
+                <div class="user-box">
+                    <input id="update-project-name-input" type="text" name="name" minlength="3" maxlength="40" required>
+                    <label for="name"><b>Name</b></label>
+                </div>
+
+                <div class="user-box">
+                    <input id="update-project-description-input" type="text" name="description" minlength="3" maxlength="300" required>
+                    <label for="description"><b>Description</b></label>
+                </div>
+    
+                <div class="user-box">
+                    <input id="update-project-url-input" type="url" name="image" pattern="https://.*" required>
+                    <label for="image"><b>Image</b></label>
+                </div>
+            </form> 
+            <button id="add-project-button" class="input-button" type="submit" form="add-project-form"> <B>Update</B> </button>
+            <button id="close-project-button" class="input-button" onclick="closeFormUpdate();"> <B>Close</B> </button>
+        </div>
+
+        <button id="add-project-popup-button" onclick="openFormAdd();">Add Project</button>
+        <button id="update-project-popup-button" onclick="openFormUpdate();">Update Project</button>
+
+        <script>
+            const formAdd = document.getElementById('add-project-popup')
+            const formUpdate = document.getElementById('update-project-popup')
+
+            const formAddButton = document.getElementById('add-project-popup-button')
+            const formUpdateButton = document.getElementById('update-project-popup-button')
+            
+            function openForm(form){
+                if(form.style.display != "block"){
+                    form.style.display = "block"
+                }
+            }
+            function closeForm(form){
+                if(form.style.display != "none"){
+                    form.style.display = "none"
+                }
+            }
+
+            function openFormAdd(){
+                openForm(formAdd)
+                document.getElementById()
+            }
+
+            function openFormUpdate(){
+                openForm(formUpdate)
+            }
+    
+            function closeFormAdd(){
+                closeForm(formAdd)
+            }
+
+            function closeFormUpdate(){
+                closeForm(formUpdate)
+            }
+
+        </script>
+
+    </body>
+</html>
