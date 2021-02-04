@@ -2,7 +2,7 @@ const {Sequelize, DataTypes, Model} = require('sequelize');
 
 const sequelize = new Sequelize('database', 'username', 'password', {
     dialect: 'sqlite',
-    storage: './Todo.sqlite'
+    storage: './Server/Database/Todo.sqlite'
 });
 
 class User extends Model {}
@@ -12,7 +12,7 @@ class Project extends Model {}
 
 User.init({
     username: DataTypes.STRING,
-    password: DataTypes.TEXT,
+    password: DataTypes.STRING,
     image: DataTypes.STRING,
 }, 
 {
@@ -53,7 +53,7 @@ Project.init({
 });
 
 
-User.hasMany(Task, {as: "user", foreignKey: 'Uid'})
+User.hasMany(Task, {as: "tasks", foreignKey: 'Uid'})
 Task.belongsTo(User, {foreignKey: 'Uid'})
 
 Column.hasMany(Task, {as: 'tasks', foreignKey: 'Cid'});
@@ -66,5 +66,4 @@ Task.belongsTo(Column, {foreignKey: 'Cid'});
 Project.hasMany(Column, {as: 'columns', foreignKey: 'Pid'});
 Column.belongsTo(Project, {foreignKey: 'Pid'})
 
-
-module.exports = { sequelize, DataTypes, User, Task, Column, Project };
+module.exports = { sequelize, DataTypes, Model, User, Task, Column, Project };

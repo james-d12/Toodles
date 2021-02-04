@@ -1,4 +1,4 @@
-const classes = require('./SequelizeClasses');
+const classes = require('./Server/Database/SequelizeClasses');
 
 async function create(){
     await classes.sequelize.sync({ force: true });
@@ -16,6 +16,8 @@ async function create(){
         Cid: 1,
         Uid: 1
     })
+
+    const projs = await classes.Project.findAll()
 }
 
 create()

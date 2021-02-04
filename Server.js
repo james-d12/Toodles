@@ -17,9 +17,7 @@ app.use(express.static('public/'))
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
-app.use(require('./Routes/Router'))
-
-
+app.use(require('./Server/Routes/Router'))
 
 app.listen(port, () => {
     console.log(`App listening at http://localhost:${port}`)
