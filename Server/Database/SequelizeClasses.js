@@ -23,8 +23,7 @@ User.init({
 
 Task.init({
     name: DataTypes.STRING,
-    description: DataTypes.TEXT,
-    image: DataTypes.STRING,
+    description: DataTypes.TEXT
 }, 
 {
     sequelize,

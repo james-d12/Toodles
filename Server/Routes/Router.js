@@ -36,7 +36,6 @@ router.put(
     '/boards/:pid/task/:tid/edit',
     check('name').isLength({min: 3, max: 40}).isString().trim().escape(),
     check('description').isLength({min: 3, max: 300}).isString().trim().escape(),
-    check('image').isURL().not().isEmpty().trim().escape(),
     check('user').isNumeric().not().isEmpty().trim().escape(),
     check('column').isNumeric().not().isEmpty().trim().escape(),
     Put.taskEdit
