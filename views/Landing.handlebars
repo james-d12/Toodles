@@ -1,9 +1,6 @@
-
 <title>Landing page and Projects</title>
     
     <!-- Display Logged in username -->
-
-
 
     <p>Logged in as: </p>
     <p>Collaborators:  </p>
@@ -12,10 +9,17 @@
     <!-- if the username has projects show them here, 
     and make them clickable-->
 
-<section><h1>  </h1></section>
+{{#each projects}}
+<!-- Add stuff for projects here -->
+<section>
+    <h1>{{this.name}}</h1>
+    <a href="/boards/{{this.id}}"> Go to project </a>
+</section>
+
 
     <!-- Log out -->
 
     <!-- Add Project -->
     
     <!-- Delete Project -->
+{{/each}}

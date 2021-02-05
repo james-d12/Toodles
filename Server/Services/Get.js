@@ -1,4 +1,3 @@
-const { Col } = require("sequelize/types/lib/utils")
 const { Project, Column, Task } = require("../Database/SequelizeClasses")
 
 /**
@@ -31,9 +30,8 @@ exports.boardsPage = async(req, res) => {
 exports.boardPage = async(req, res) => {
     const project = await Project.findByPk(req.params.id)
     const columns = await project.getColumns({
-        include: [[{model: Task, as: 'tasks'}]],
         nest: true 
     })
 
-    res.render('Landing')
+    res.render('Tasks', {project, columns})
 }
