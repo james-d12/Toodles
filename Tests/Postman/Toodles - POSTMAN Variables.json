@@ -1,0 +1,14 @@
+{
+	"id": "6de7d7f0-cbb3-4e1c-8b30-3d163eea93df",
+	"values": [
+		{
+			"key": "host",
+			"value": "",
+			"enabled": true
+		}
+	],
+	"name": "Todo-App Globals",
+	"_postman_variable_scope": "globals",
+	"_postman_exported_at": "2021-02-05T15:07:20.444Z",
+	"_postman_exported_using": "Postman/8.0.4"
+}
