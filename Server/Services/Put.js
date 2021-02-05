@@ -6,6 +6,11 @@ const { Project, Column, Task } = require("../Database/SequelizeClasses")
  * @param {Response} res - The reponse the server will give.
  */
 exports.boardPageEdit = async(req, res) => {
+    const errors = validationResult(req)
+    if(!errors.isEmpty()){
+        return res.status(400).json({errors: errors.array})
+    }
+
     const { name, description, image } = req.body 
 
     const project = await Project.findByPk(req.params.id)
@@ -24,6 +29,11 @@ exports.boardPageEdit = async(req, res) => {
  * @param {Response} res - The reponse the server will give.
  */
 exports.taskEdit = async(req, res) => {
+    const errors = validationResult(req)
+    if(!errors.isEmpty()){
+        return res.status(400).json({errors: errors.array})
+    }
+
     const task = await Task.findByPk(req.params.tid)
     console.log("[INFO]: Editing Task: ", task)
 }

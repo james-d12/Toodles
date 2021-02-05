@@ -1,12 +1,16 @@
 const { Project, Column, Task } = require("../Database/SequelizeClasses")
 
+const homepage = 'Home'
+const boardsPage = 'Landing'
+const boardPage = 'Tasks'
+
 /**
  * Renders the homepage of the app.
  * @param {Request} req - The request that the caller has sent to the server.
  * @param {Response} res - The reponse the server will give.
  */
 exports.homePage = async(req, res) => {
-    res.render('home')
+    res.render(homepage)
 }
 
 /**
@@ -19,7 +23,7 @@ exports.boardsPage = async(req, res) => {
         include: [{model: Column, as: 'columns'}],
         nest: true
     })
-    res.render('Landing', {projects})
+    res.render(boardsPage, {projects})
 }
 
 /**
@@ -33,5 +37,5 @@ exports.boardPage = async(req, res) => {
         nest: true 
     })
 
-    res.render('Tasks', {project, columns})
+    res.render(boardPage, {project, columns})
 }

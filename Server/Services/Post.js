@@ -1,4 +1,9 @@
+const { validationResult } = require("express-validator")
 const { Project, Column, Task } = require("../Database/SequelizeClasses")
+
+const homepage = 'Home'
+const boardsPage = 'Landing'
+const boardPage = 'Tasks'
 
 /**
  * Create a new project.
@@ -6,7 +11,14 @@ const { Project, Column, Task } = require("../Database/SequelizeClasses")
  * @param {Response} res - The reponse the server will give.
  */
 exports.boardPageNew = async(req, res) => {
+    const errors = validationResult(req)
+    if(!errors.isEmpty()){
+        return res.status(400).json({errors: errors.array})
+    }
+
     const { name, description, image } = req.body 
+
+    console.log(req.body)
 
     await Project.create({
         name: name, 
@@ -14,7 +26,7 @@ exports.boardPageNew = async(req, res) => {
         image: image
     })
 
-    res.render('Landing')
+    res.render(boardsPage)
 }
 
 /**
@@ -23,6 +35,11 @@ exports.boardPageNew = async(req, res) => {
  * @param {Response} res - The reponse the server will give.
  */
 exports.taskNew = async(req, res) => {
+    const errors = validationResult(req)
+    if(!errors.isEmpty()){
+        return res.status(400).json({errors: errors.array})
+    }
+
     const { name, description, image, user, column } = req.body 
 
     await Task.create({
@@ -33,5 +50,5 @@ exports.taskNew = async(req, res) => {
         column: column
     })
 
-    resl.render('Landing')
+    resl.render(boardsPage)
 }
