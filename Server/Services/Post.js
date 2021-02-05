@@ -1,4 +1,3 @@
-const { col } = require("sequelize/types")
 const { Project, Column, Task } = require("../Database/SequelizeClasses")
 
 /**
