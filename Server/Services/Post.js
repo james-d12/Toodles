@@ -16,9 +16,9 @@ exports.boardPageNew = async(req, res) => {
         return res.status(400).json({errors: errors.array})
     }
 
-    const { name, description, image } = req.body 
-
     console.log(req.body)
+
+    const { name, description, image } = req.body 
 
     await Project.create({
         name: name, 
