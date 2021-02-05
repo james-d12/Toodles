@@ -15,7 +15,7 @@ router.post(
     '/boards/new', 
     check('name').isLength({min: 3, max: 40}).isString().trim().escape(),
     check('description').isLength({min: 3, max: 300}).isString().trim().escape(),
-    check('image').isURL().not().isEmpty().trim().escape(),
+    check('image').matches('https://.*').isURL().not().isEmpty().trim().escape(),
     Post.boardPageNew
 )
 
@@ -28,7 +28,7 @@ router.put(
     '/boards/:id/edit',
     check('name').isLength({min: 3, max: 40}).isString().trim().escape(),
     check('description').isLength({min: 3, max: 300}).isString().trim().escape(),
-    check('image').isURL().not().isEmpty().trim().escape(),
+    check('image').matches('https://.*').isURL().not().isEmpty().trim().escape(),
     Put.boardPageEdit
 )
 

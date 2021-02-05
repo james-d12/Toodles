@@ -49,5 +49,5 @@ exports.taskNew = async(req, res) => {
         column: column
     })
 
-    resl.render(boardsPage)
+    res.render(boardsPage)
 }
