@@ -1,7 +1,39 @@
+
 <h1>{{project.name}}</h1>
 
 {{#each columns}}
 
-<h1> {{this.name}} </h1>
+
 
 {{/each}}
+<!--columns 
+Project Title -->
+    <title>Tasks</title>
+
+	<div class="container">
+        <!--
+		<div class="box todo">
+			<div class="box-sub">
+				<form id="myForm">
+					<i class="fa fa-plus"> </i>
+				</form>
+			</div>
+			<div class="tasks" id="lists">
+			</div>
+		</div> -->
+
+{{#each columns}}
+
+		<div class="box working">
+			<div class="box-sub">{{this.name}}</div>
+			<div id="working" class="tasks">
+			</div>
+		</div>
+
+{{/each}}
+
+
+
+	</div>
+
+
