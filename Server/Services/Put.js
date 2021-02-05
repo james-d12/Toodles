@@ -13,15 +13,20 @@ exports.boardPageEdit = async(req, res) => {
     }
 
     const { name, description, image } = req.body 
-
     const project = await Project.findByPk(req.params.id)
-    await project.update({
-        name: name, 
-        description: description, 
-        image: image 
-    })
-    
-    res.redirect(`/boards/${req.params.id}`)
+
+    if(project != null){
+        await project.update({
+            name: name, 
+            description: description, 
+            image: image 
+        })
+        
+        res.redirect(`/boards/${req.params.id}`)
+    }
+    else {
+        res.status(400).send(`Error finding project!`)
+    }
 }
 
 /**
@@ -35,6 +40,21 @@ exports.taskEdit = async(req, res) => {
         return res.status(400).json({errors: errors.array})
     }
 
+    const { name, description, user, column } = req.body 
+
     const task = await Task.findByPk(req.params.tid)
-    console.log("[INFO]: Editing Task: ", task)
+
+    if(task != null){
+        await task.update({
+            name: name, 
+            description: description, 
+            user: user,
+            column: column
+        })
+        
+        res.redirect(`/boards/${req.params.id}`)
+    }
+    else {
+        res.status(400).send(`Error finding Task!`)
+    }
 }
