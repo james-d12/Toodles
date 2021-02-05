@@ -40,12 +40,11 @@ exports.taskNew = async(req, res) => {
         return res.status(400).json({errors: errors.array})
     }
 
-    const { name, description, image, user, column } = req.body 
+    const { name, description, user, column } = req.body 
 
     await Task.create({
         name: name,
         description: description,
-        image: image,
         user: user,
         column: column
     })
