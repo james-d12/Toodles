@@ -1,7 +1,7 @@
 {
     
     "opts": {                                                                   
-        "destination": "Docs/Reference/",                                     
+        "destination": "docs/reference/",                                     
         "recurse": true                          
     }
 
