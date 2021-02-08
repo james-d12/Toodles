@@ -48,11 +48,11 @@ exports.taskEdit = async(req, res) => {
         await task.update({
             name: name, 
             description: description, 
-            user: user,
-            column: column
+            Cid: column,
+            Uid: user
         })
         
-        res.redirect(`/boards/${req.params.id}`)
+        res.redirect(`/boards/${req.params.pid}`)
     }
     else {
         res.status(400).send(`Error finding Task!`)
