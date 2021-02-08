@@ -2,3 +2,5 @@ node_modules
 .vscode
 coverage
 out
+Server/Database/Todo.sqlite
+*.sqlite
