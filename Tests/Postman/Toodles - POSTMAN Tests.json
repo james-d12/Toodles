@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "cfb6a275-0178-4503-8b9c-b2d35bb2e542",
+		"_postman_id": "fdbd73a5-7d94-48bd-8cc9-685a287700df",
 		"name": "Toodles - CRUD Operations",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -9,313 +9,503 @@
 			"name": "Create",
 			"item": [
 				{
-					"name": "Valid",
+					"name": "Board",
 					"item": [
 						{
-							"name": "Board New Valid",
-							"event": [
+							"name": "Valid",
+							"item": [
 								{
-									"listen": "test",
-									"script": {
-										"exec": [
-											"pm.test(\"Status test\", function(){\r",
-											"    pm.response.to.have.status(200)\r",
-											"})\r",
-											"\r",
-											"\r",
-											""
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"name\": \"Homework\",\r\n    \"description\": \"stuff\",\r\n    \"image\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
+									"name": "Board New Valid",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status test\", function(){\r",
+													"    pm.response.to.have.status(200)\r",
+													"})\r",
+													"\r",
+													"\r",
+													""
+												],
+												"type": "text/javascript"
+											}
 										}
-									}
-								},
-								"url": {
-									"raw": "{{host}}/boards/new",
-									"host": [
-										"{{host}}"
 									],
-									"path": [
-										"boards",
-										"new"
-									]
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"Homework\",\r\n    \"description\": \"stuff\",\r\n    \"image\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/boards/new",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"boards",
+												"new"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Board New Valid - Name Short",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status test\", function(){\r",
+													"    pm.response.to.have.status(200)\r",
+													"})\r",
+													"\r",
+													"\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"Tom\",\r\n    \"description\": \"stuff\",\r\n    \"image\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/boards/new",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"boards",
+												"new"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Board New Valid - Name Long",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status test\", function(){\r",
+													"    pm.response.to.have.status(200)\r",
+													"})\r",
+													"\r",
+													"\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"9Y0Qyfj4sByQkh3QzkAJqPbwdCVOKaZTr2gRKEoq\",\r\n    \"description\": \"stuff\",\r\n    \"image\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/boards/new",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"boards",
+												"new"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Board New Valid - Description Short",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status test\", function(){\r",
+													"    pm.response.to.have.status(200)\r",
+													"})\r",
+													"\r",
+													"\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"Homework\",\r\n    \"description\": \"stu\",\r\n    \"image\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/boards/new",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"boards",
+												"new"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Board New Valid - Description Long",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status test\", function(){\r",
+													"    pm.response.to.have.status(200)\r",
+													"})\r",
+													"\r",
+													"\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"Homework\",\r\n    \"description\": \"o9erBKnJdIMc7Ft7Fsi6wpbyI7ucz6352L9yNDmhBBfZiOE0fGIDYiovVoy73icd4VZ7pS5VNAvJYWCrQuOfVMy4omkoNhoYNaaFJO9eeOwO8Ow3zt7WmJnT3aUWUIy2xfq2zIseTRNyUMM9MVtR356WiORr1tuO7y5N5Vg285ijOVaL68PB4tOe8il33Zolr272VxZC8KV10IE76PbXPc7XMPiDN2x4ZI4iQiaMrh2Z4LYxvOW3r5469p4JYmJ7T4gLDQzD4AReVONFPpvxYDVrAUBdANrpt6DnORfDCfq2\",\r\n    \"image\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/boards/new",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"boards",
+												"new"
+											]
+										}
+									},
+									"response": []
 								}
-							},
-							"response": []
+							]
+						},
+						{
+							"name": "Invalid",
+							"item": [
+								{
+									"name": "Board New Invalid - Name Short",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status test\", function(){\r",
+													"    pm.response.to.have.status(400)\r",
+													"})\r",
+													"\r",
+													"\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"Ho\",\r\n    \"description\": \"stuff\",\r\n    \"image\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/boards/new",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"boards",
+												"new"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Board New Invalid - Name Long",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status test\", function(){\r",
+													"    pm.response.to.have.status(400)\r",
+													"})\r",
+													"\r",
+													"\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"Hoajsdjasoihfjgasiodfjaiofjioasfjiosdfjaidfjioajifjasiofjasiofjasifjioasjifasjdifojsdf\",\r\n    \"description\": \"stuff\",\r\n    \"image\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/boards/new",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"boards",
+												"new"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Board New Invalid - Description Short",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status test\", function(){\r",
+													"    pm.response.to.have.status(400)\r",
+													"})\r",
+													"\r",
+													"\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"Homework\",\r\n    \"description\": \"st\",\r\n    \"image\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/boards/new",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"boards",
+												"new"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Board New Invalid - Description Long",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status test\", function(){\r",
+													"    pm.response.to.have.status(400)\r",
+													"})\r",
+													"\r",
+													"\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"Homework\",\r\n    \"description\": \"st aksdoka sod kasdkasodka skpdoas kpodas pokaspo kpaosdkpasodkpasodkpoasko32j4i23j4io32 jij aodkpoaskd poaskdp oakpodkapodkpaoskdpa oskdpoaskpd oask j fasifjuiohu jeui9jei ojasiod fjaiofjweaijfaps ofjasdiofjg aiodjfioa  sapdlkaspd kpas kdaskpd oakpsod kapodkpaosdkpoakd paod kpaod kpaokd asdas kd kaosd kasod kaskd oakd oakd oakpdo akpsod kaosdk pasokdo askodka pok\",\r\n    \"image\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/boards/new",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"boards",
+												"new"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Board New Invalid - Image Not URL",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status test\", function(){\r",
+													"    pm.response.to.have.status(400)\r",
+													"})\r",
+													"\r",
+													"\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"Homework\",\r\n    \"description\": \"stuff\",\r\n    \"image\": \"image.png\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/boards/new",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"boards",
+												"new"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Board New Invalid - Image Not Secure URL",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status test\", function(){\r",
+													"    pm.response.to.have.status(400)\r",
+													"})\r",
+													"\r",
+													"\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"Homework\",\r\n    \"description\": \"stuff\",\r\n    \"image\": \"http://www.place.com/image.png\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/boards/new",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"boards",
+												"new"
+											]
+										}
+									},
+									"response": []
+								}
+							]
 						}
 					]
 				},
 				{
-					"name": "Invalid",
+					"name": "Task",
 					"item": [
 						{
-							"name": "Board New Invalid - Name Short",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"exec": [
-											"pm.test(\"Status test\", function(){\r",
-											"    pm.response.to.have.status(400)\r",
-											"})\r",
-											"\r",
-											"\r",
-											""
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"name\": \"Ho\",\r\n    \"description\": \"stuff\",\r\n    \"image\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{host}}/boards/new",
-									"host": [
-										"{{host}}"
-									],
-									"path": [
-										"boards",
-										"new"
-									]
-								}
-							},
-							"response": []
+							"name": "Valid",
+							"item": []
 						},
 						{
-							"name": "Board New Invalid - Name Long",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"exec": [
-											"pm.test(\"Status test\", function(){\r",
-											"    pm.response.to.have.status(400)\r",
-											"})\r",
-											"\r",
-											"\r",
-											""
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"name\": \"Hoajsdjasoihfjgasiodfjaiofjioasfjiosdfjaidfjioajifjasiofjasiofjasifjioasjifasjdifojsdf\",\r\n    \"description\": \"stuff\",\r\n    \"image\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{host}}/boards/new",
-									"host": [
-										"{{host}}"
-									],
-									"path": [
-										"boards",
-										"new"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Board New Invalid - Description Short",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"exec": [
-											"pm.test(\"Status test\", function(){\r",
-											"    pm.response.to.have.status(400)\r",
-											"})\r",
-											"\r",
-											"\r",
-											""
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"name\": \"Homework\",\r\n    \"description\": \"st\",\r\n    \"image\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{host}}/boards/new",
-									"host": [
-										"{{host}}"
-									],
-									"path": [
-										"boards",
-										"new"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Board New Invalid - Description Long",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"exec": [
-											"pm.test(\"Status test\", function(){\r",
-											"    pm.response.to.have.status(400)\r",
-											"})\r",
-											"\r",
-											"\r",
-											""
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"name\": \"Homework\",\r\n    \"description\": \"st aksdoka sod kasdkasodka skpdoas kpodas pokaspo kpaosdkpasodkpasodkpoasko32j4i23j4io32 jij aodkpoaskd poaskdp oakpodkapodkpaoskdpa oskdpoaskpd oask j fasifjuiohu jeui9jei ojasiod fjaiofjweaijfaps ofjasdiofjg aiodjfioa  sapdlkaspd kpas kdaskpd oakpsod kapodkpaosdkpoakd paod kpaod kpaokd asdas kd kaosd kasod kaskd oakd oakd oakpdo akpsod kaosdk pasokdo askodka pok\",\r\n    \"image\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{host}}/boards/new",
-									"host": [
-										"{{host}}"
-									],
-									"path": [
-										"boards",
-										"new"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Board New Invalid - Image Not URL",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"exec": [
-											"pm.test(\"Status test\", function(){\r",
-											"    pm.response.to.have.status(400)\r",
-											"})\r",
-											"\r",
-											"\r",
-											""
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"name\": \"Homework\",\r\n    \"description\": \"stuff\",\r\n    \"image\": \"image.png\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{host}}/boards/new",
-									"host": [
-										"{{host}}"
-									],
-									"path": [
-										"boards",
-										"new"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Board New Invalid - Image Not Secure URL",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"exec": [
-											"pm.test(\"Status test\", function(){\r",
-											"    pm.response.to.have.status(400)\r",
-											"})\r",
-											"\r",
-											"\r",
-											""
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"name\": \"Homework\",\r\n    \"description\": \"stuff\",\r\n    \"image\": \"http://www.place.com/image.png\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{host}}/boards/new",
-									"host": [
-										"{{host}}"
-									],
-									"path": [
-										"boards",
-										"new"
-									]
-								}
-							},
-							"response": []
+							"name": "Invalid",
+							"item": []
 						}
 					]
 				}

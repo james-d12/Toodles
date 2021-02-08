@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest",
     "test:report": "jest --coverage=true",
-    "test:cypress": "cypress open"
+    "test:cypress": "cypress open",
+    "docs:gen": "jsdoc ./Server -c jsdoc-conf.json"
   },
   "repository": {
     "type": "git",
