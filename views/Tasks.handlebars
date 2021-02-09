@@ -1,11 +1,17 @@
 
 <h1>{{project.name}}</h1>
+<!-- Logged in as -->
+<!-- Collaborators -->
 
+
+<!--
 {{#each columns}}
 
 
-
 {{/each}}
+
+{{#each this.tasks}}
+{{/each}} -->
 <!--columns 
 Project Title -->
     <title>Tasks</title>
@@ -22,14 +28,18 @@ Project Title -->
 			</div>
 		</div> -->
 
-
+{{#each columns}}
+{{#each this.tasks}}
 	<div class="box working" >
 			<div class="box-sub" >To do</div>
 			<div id="working" class="tasks" >
-            <p id=grabbable> 123</p>
+			<p id=grabbable></p> {{this.name}} </p>
+			
 			</div>
             
 		</div>
+		{{/each}}
+{{/each}}
 
 
 	<div class="box working">
