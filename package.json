@@ -4,8 +4,8 @@
   "description": "A todo list app.",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
-    "test:report": "jest --coverage=true",
+    "test": "jest Tests/Jest/",
+    "test:report": "jest --coverage=true Tests/Jest/",
     "test:cypress": "cypress open --config-file Config/cypress.json",
     "docs:gen": "jsdoc ./Server -c Config/jsdoc-conf.json"
   },
