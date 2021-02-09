@@ -176,7 +176,7 @@ h2{
 
 
 
-#grabbable{
+.draggable{
     margin: 10px;
     padding: 1rem;
     background-color: yellow;
