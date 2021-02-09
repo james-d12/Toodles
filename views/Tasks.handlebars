@@ -1,11 +1,17 @@
 
 <h1>{{project.name}}</h1>
+<!-- Logged in as -->
+<!-- Collaborators -->
 
+
+<!--
 {{#each columns}}
 
 
-
 {{/each}}
+
+{{#each this.tasks}}
+{{/each}} -->
 <!--columns 
 Project Title -->
     <title>Tasks</title>
@@ -48,23 +54,24 @@ Project Title -->
             <button id="close-project-button" class="input-button" onclick="closeForm();"> <B>Close</B> </button>
         </div>
 
+{{#each columns}}
+
+<div class="box" >
+		
+	<div class="box-sub" >
+		{{this.name}}
+		<span id = "plusIcon" onclick="openForm()">&#43;</span>
+	</div>
+	<div id="working" class="tasks" >
+	{{#each this.tasks}}				
+		<p class="draggable"> {{this.name}} </p>					
+	{{/each}}
+	</div>            
+</div>
+{{/each}}
 
 
-	<div class="box" >
-			<div class="box-sub">To do
-				<span id = "plusIcon" onclick="openForm()">&#43;</span>
-			</div>
-			<div id="working" class="tasks" >
-            <p class="draggable"> 123</p>
-			<p class="draggable"> 123</p>
-			<p class="draggable"> 123</p>
-			<p class="draggable"> 123</p>
-			<p class="draggable"> 123</p>
-			</div>
-            
-		</div>
-
-
+	<!--
 	<div class="box">
 			<div class="box-sub">In Progress</div>
 			<div id="working" class="tasks">                
@@ -76,6 +83,8 @@ Project Title -->
 			<div id="working" class="tasks">                
 			</div>
 		</div>
+	-->
+
 
 </div>
 
