@@ -3,23 +3,42 @@
     <!-- Display Logged in username -->
 
     <p>Logged in as: </p>
-    <p>Collaborators:  </p>
-
+    <br>
 
     <!-- if the username has projects show them here, 
     and make them clickable-->
 
+<h1 style="text-align: center;">Your Projects</h1>
+
+<div style="display: flex; justify-content: center;">
+    <button><a href="test.html">New Project</a></button>
+</div>
+
 {{#each projects}}
+
+
 <!-- Add stuff for projects here -->
-<section>
-    <h1>{{this.name}}</h1>
-    <a href="/boards/{{this.id}}"> Go to project </a>
-</section>
+<div class="container">
 
+<div>
+    <section>
+        <article>
+    <!-- Fox - A project image might not be needed -->
+    <header style="background-image: url({{this.image}});"></header>
+    <a href="/boards/{{this.id}}"> <h1 style="font-size: 150%;">{{this.name}}</h1> </a>
+    <p>Description: {{this.description}}</p>
+    <button><a href="/boards/{{this.id}}/delete">Delete {{this.name}}</a></button>
 
+       </article>
+ 
+    </section>
+</div>
     <!-- Log out -->
 
     <!-- Add Project -->
     
     <!-- Delete Project -->
+    </div>
+    
 {{/each}}
+
