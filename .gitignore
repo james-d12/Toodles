@@ -3,3 +3,8 @@ node_modules
 out
 Server/Database/Todo.sqlite
 *.sqlite
+debug.log 
+cypress/fixtures
+cypress/integration
+cypress/plugins
+cypress/support
