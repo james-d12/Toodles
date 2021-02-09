@@ -16,44 +16,127 @@
 Project Title -->
     <title>Tasks</title>
 
-	<div class="container" >
-        <!--
-		<div class="box todo">
-			<div class="box-sub">
-				<form id="myForm">
-					<i class="fa fa-plus"> </i>
-				</form>
-			</div>
-			<div class="tasks" id="lists">
-			</div>
-		</div> -->
+  
+	
+
+
+<div class="container" >
+
+	<div class = "addFormContainer" id="myDIV">
+	<div class ="forms">
+     	<form action="action_page.php">
+		<label id= "taskName" for="fname">Task Name:</label><br>
+    	<input id="taskTitle" type="text" name="taskName" placeholder="Task Title"><br>
+		<label id ="descLabel"for="subject">Task Description</label><br>
+    	<textarea id="taskDesc" name="taskDesc" placeholder="Write something.." style="height:200px"></textarea><br>
+		<input type="submit" value="Submit">
+	</form>
+	</div>
+	</div>
+		  <div id="add-project-popup" class="input-box" >
+            <form class="add-project-form" action="/boards/new" method="POST">
+                <div class="user-box">
+                    <input id="add-project-name-input" type="text" name="name" minlength="3" maxlength="40" required>
+                    <label for="name"><b>Name</b></label>
+                </div>
+
+                <div class="user-box">
+                    <input id="add-project-description-input" type="text" name="description" minlength="3" maxlength="300" required>
+                    <label for="description"><b>Description</b></label>
+                </div>
+    
+                <div class="user-box">
+                    <input id="add-project-url-input" type="url" name="image" pattern="https://.*" required>
+                    <label for="image"><b>Image</b></label>
+                </div>
+            </form> 
+            <button id="add-project-button" class="input-button" type="submit" form="add-project-form"> <B>Add</B> </button>
+            <button id="close-project-button" class="input-button" onclick="closeForm();"> <B>Close</B> </button>
+        </div>
 
 {{#each columns}}
-{{#each this.tasks}}
-	<div class="box working" >
-			<div class="box-sub" >To do</div>
-			<div id="working" class="tasks" >
-			<p id=grabbable></p> {{this.name}} </p>
-			
-			</div>
-            
-		</div>
-		{{/each}}
+
+<div class="box" >
+		
+	<div class="box-sub" >To do
+		<span id = "plusIcon" onclick="openForm()">&#43;</span>
+	</div>
+	<div id="working" class="tasks" >
+	{{#each this.tasks}}				
+		<p class="draggable"> {{this.name}} </p>					
+	{{/each}}
+	</div>            
+</div>
 {{/each}}
 
 
-	<div class="box working">
+	<div class="box">
 			<div class="box-sub">In Progress</div>
 			<div id="working" class="tasks">                
 			</div>
 		</div>
 
-        	<div class="box working">
+    <div class="box">
 			<div class="box-sub">Finished</div>
 			<div id="working" class="tasks">                
 			</div>
 		</div>
 
-	</div>
+</div>
 
+<script>
+	
+	
+	const draggables = document.querySelectorAll('.draggable')
+	console.log(draggables)
+	const containers = document.querySelectorAll('.box')
+	console.log(containers)
 
+	draggables.forEach(draggable => {
+
+    	draggable.addEventListener('dragstart', () =>{
+        console.log("drag")
+		draggable.classList.add('dragging')
+
+    	})
+
+		draggable.addEventListener('dragend', () => {
+        draggable.classList.remove('dragging')
+    	})
+    })
+
+	containers.forEach(container => {
+    container.addEventListener('dragover', e => {
+    e.preventDefault()
+    const draggable = document.querySelector('.dragging')
+    container.appendChild(draggable)
+      //  console.log('dragging over')
+    })
+})
+
+function myFunction() {
+  var x = document.getElementById("myDIV");
+  if (x.style.display === "none") {nd
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+
+  }
+}
+
+const formAdd = document.getElementById('add-project-popup')
+
+            const formAddButton = document.getElementById('add-project-popup-button')            
+           
+		    function openForm(){
+                if(formAdd.style.display != "block"){
+                    formAdd.style.display = "block"
+                }
+            }
+            function closeForm(){
+                if(formAdd.style.display != "none"){
+                    formAdd.style.display = "none"
+                }
+            }
+	
+</script>

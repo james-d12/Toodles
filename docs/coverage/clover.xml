@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1612797413575" clover="3.2.0">
+  <project timestamp="1612797413575" name="All files">
+    <metrics statements="13" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0" elements="13" coveredelements="13" complexity="0" loc="13" ncloc="13" packages="1" files="1" classes="1"/>
+    <file name="SequelizeClasses.js" path="C:\Dev\JavaScript\Toodles\Server\Database\SequelizeClasses.js">
+      <metrics statements="13" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="3" count="1" type="stmt"/>
+      <line num="37" count="1" type="stmt"/>
+      <line num="48" count="1" type="stmt"/>
+      <line num="58" count="1" type="stmt"/>
+      <line num="67" count="1" type="stmt"/>
+      <line num="79" count="1" type="stmt"/>
+      <line num="80" count="1" type="stmt"/>
+      <line num="82" count="1" type="stmt"/>
+      <line num="83" count="1" type="stmt"/>
+      <line num="89" count="1" type="stmt"/>
+      <line num="90" count="1" type="stmt"/>
+      <line num="92" count="1" type="stmt"/>
+    </file>
+  </project>
+</coverage>

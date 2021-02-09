@@ -5,9 +5,33 @@ const sequelize = new Sequelize('database', 'username', 'password', {
     storage: './Server/Database/Todo.sqlite'
 });
 
+/**
+ * Represents a User in the Todo App.
+ * @property {DataTypes.STRING} username - The username of the user.
+ * @property {DataTypes.STRING} password - The password of the user.
+ * @property {DataTypes.STRING} image - The avatar of the user.
+ */
 class User extends Model {}
+/**
+ * Represents a Task in the Todo App.
+ * @property {DataTypes.STRING} name - The name of the task.
+ * @property {DataTypes.TEXT} description - The description of the task.
+ * @property {DataTypes.INTEGER} Cid - The Column that the task is apart of.
+ * @property {DataTypes.INTEGER} Uid - The User assigned to the task.
+ */
 class Task extends Model {}
+/**
+ * Represents a Column in the Todo App.
+ * @property {DataTypes.STRING} name - The name of the column.
+ * @property {DataTypes.INTEGER} Pid - The Project that it is apart of.
+ */
 class Column extends Model {}
+/**
+ * Represents a Project in the Todo App.
+ * @property {DataTypes.STRING} name - The name of the project.
+ * @property {DataTypes.TEXT} description - The description of the project.
+ * @property {DataTypes.STRING} image - The image of the project.
+ */
 class Project extends Model {}
 
 User.init({

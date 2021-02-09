@@ -42,11 +42,13 @@ exports.taskNew = async(req, res) => {
 
     const { name, description, user, column } = req.body 
 
+    console.log(req.body)
+
     await Task.create({
         name: name,
         description: description,
-        user: user,
-        column: column
+        Cid: column,
+        Uid: user
     })
 
     res.render(boardsPage)

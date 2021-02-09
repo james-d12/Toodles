@@ -1,3 +1,20 @@
+/*
+console.log("appearance")
+console.log(document.querySelectorAll('.box'))
+let draggables = document.createElement('.draggable')
+console.log(draggables)
+let containers = document.querySelectorAll('.box')
+console.log(containers)
+
+draggables.forEach(draggable => {
+    draggable.addEventListener('dragstart', () =>{
+        console.log("drag")
+    })
+})
+*/
+
+
+/*
 const draggables = document.querySelectorAll('.draggable')
 const containers = document.querySelectorAll('.container')
 
@@ -20,3 +37,4 @@ containers.forEach(container => {
       //  console.log('dragging over')
     })
 })
+*/

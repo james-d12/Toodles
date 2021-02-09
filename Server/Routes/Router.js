@@ -21,6 +21,10 @@ router.post(
 
 router.post(
     '/boards/:id/task/new',
+    check('name').isLength({min: 3, max: 40}).isString().trim().escape(),
+    check('description').isLength({min: 3, max: 300}).isString().trim().escape(),
+    check('user').isNumeric().not().isEmpty().trim().escape(),
+    check('column').isNumeric().not().isEmpty().trim().escape(),
     Post.taskNew
 )
 
