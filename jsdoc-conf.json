@@ -1,0 +1,8 @@
+{
+    
+    "opts": {                                                                   
+        "destination": "docs/reference/",                                     
+        "recurse": true                          
+    }
+
+}

@@ -1,24 +1,62 @@
+const fs = require("fs");
 const classes = require('./Server/Database/SequelizeClasses');
 
-async function create(){
-    await classes.sequelize.sync({ force: true });
-    
-    await classes.User.create({username: "james123", password:"1234", image: "https://www.w3schools.com/howto/img_avatar2.png"})
-    await classes.Project.create({name: "Choirs", description: "Keeps track of choirs", image: ""})
-    await classes.Project.create({name: "Choirs 1", description: "Keeps track of choirs", image: ""})
-    await classes.Column.create({name: "todo", Pid: 1})
-    await classes.Column.create({name: "inprogress", Pid: 1})
-    await classes.Column.create({name: "done", Pid: 1})
 
-    await classes.Task.create({
-        name: "Do stuff",
-        description: "stuiff",
-        image: "",
-        Cid: 1,
-        Uid: 1
+function readFile(file){
+    return new Promise((resolve, reject) => {
+        fs.readFile(file, (err, data) => {
+            if (err) reject(`error whilst reading ${file}.`)
+            const parsedData = JSON.parse(data)
+            return resolve(parsedData)
+        })
     })
-
-    const projs = await classes.Project.findAll()
 }
 
-create()
+async function insert(){
+    const user_file = "./Server/Database/Data/users.json"
+    const project_file = "./Server/Database/Data/projects.json"
+    const column_file = "./Server/Database/Data/columns.json"
+    const task_file = "./Server/Database/Data/tasks.json"
+
+    const user_data = await readFile(user_file)
+    const project_data = await readFile(project_file)
+    const column_data = await readFile(column_file)
+    const task_data = await readFile(task_file)
+
+    
+    await classes.sequelize.sync({ force: true })
+
+    for(let i = 0; i < user_data.length; i++){
+        await classes.User.create({
+            username: user_data[i].username,
+            password: user_data[i].password,
+            image: user_data[i].image
+        })
+    }
+
+    for(let i = 0; i < project_data.length; i++){
+        await classes.Project.create({
+            name: project_data[i].name,
+            description: project_data[i].description,
+            image: project_data[i].image
+        })
+    }
+
+    for(let i = 0; i < column_data.length; i++){
+        await classes.Column.create({
+            name: column_data[i].name,
+            Pid: column_data[i].project_id
+        })
+    }
+
+    for(let i = 0; i < task_data.length; i++){
+        await classes.Task.create({
+            name: task_data[i].name,
+            description: task_data[i].description,
+            Cid: task_data[i].column_id,
+            Uid: task_data[i].user_id
+        })
+    }
+}
+
+insert()

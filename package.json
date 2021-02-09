@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest",
     "test:report": "jest --coverage=true",
-    "test:cypress": "cypress open"
+    "test:cypress": "cypress open",
+    "docs:gen": "jsdoc ./Server -c jsdoc-conf.json"
   },
   "repository": {
     "type": "git",
@@ -31,5 +32,13 @@
     "cypress": "^6.4.0",
     "jest": "^26.6.3",
     "jsdoc": "^3.6.6"
+  },
+  "jest": {
+    "coverageDirectory": "docs/coverage",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/.node/",
+      "/jest/"
+    ]
   }
 }

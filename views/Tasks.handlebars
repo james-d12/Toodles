@@ -27,20 +27,21 @@ Project Title -->
 			<div class="tasks" id="lists">
 			</div>
 		</div> -->
-
 {{#each columns}}
-{{#each this.tasks}}
-	<div class="box working" >
-			<div class="box-sub" >To do</div>
-			<div id="working" class="tasks" >
-			<p id=grabbable></p> {{this.name}} </p>
-			
+<div class="box working">
+			<div class="box-sub">{{this.name}}</div>
+			<div id="working" class="tasks">    
+				{{#each this.tasks}}   
+			<div id="grabbable">
+				<p> {{this.name}}</p>  
+				 <p>{{this.description}}</p>
 			</div>
-            
-		</div>
-		{{/each}}
-{{/each}}
 
+				
+				{{/each}} 
+			</div>
+		</div>
+{{/each}}
 
 	<div class="box working">
 			<div class="box-sub">In Progress</div>
