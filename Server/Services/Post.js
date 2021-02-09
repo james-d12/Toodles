@@ -16,8 +16,6 @@ exports.boardPageNew = async(req, res) => {
         return res.status(400).json({errors: errors.array})
     }
 
-    console.log(req.body)
-
     const { name, description, image } = req.body 
 
     await Project.create({
@@ -41,8 +39,6 @@ exports.taskNew = async(req, res) => {
     }
 
     const { name, description, user, column } = req.body 
-
-    console.log(req.body)
 
     await Task.create({
         name: name,
