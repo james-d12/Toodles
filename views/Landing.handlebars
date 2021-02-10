@@ -10,8 +10,28 @@
 
 <h1 style="text-align: center;">Your Projects</h1>
 
+ <div id="add-project-popup" class="input-box">
+    <form class="add-project-form" action="/boards/new" method="POST">
+        <div class="user-box">
+            <input id="add-project-name-input" type="text" name="name" minlength="3" maxlength="40" required>
+            <label for="name"><b>Name</b></label>
+        </div>
+        <div class="user-box">
+            <input id="add-project-description-input" type="text" name="description" minlength="3" maxlength="300" required>
+            <label for="description"><b>Description</b></label>
+        </div>
+        <div class="user-box">
+            <input id="add-project-url-input" type="url" name="image" pattern="https://.*" required>
+            <label for="image"><b>Image</b></label>
+        </div>
+        <button id="add-project-button" class="input-button" type="submit"> <B>Add</B> </button>
+        <button id="close-project-button" class="input-button" onclick="closeForm();"> <B>Close</B> </button>
+    </form> 
+</div>
+
+
 <div style="display: flex; justify-content: center;">
-    <button><a href="test.html">New Project</a></button>
+    <button onclick="openForm();">New Project</button>
 </div>
 
 {{#each projects}}
@@ -42,6 +62,21 @@
 
 
 <script>
+    const formAdd = document.getElementById('add-project-popup')
+    const formAddButton = document.getElementById('add-project-popup-button')            
+
+    function openForm(){
+        if(formAdd.style.display != "block"){
+            formAdd.style.display = "block"
+        }
+    }
+
+    function closeForm(){
+        if(formAdd.style.display != "none"){
+            formAdd.style.display = "none"
+        }
+    }
+
     async function deleteProject(project_id){
         fetch(`boards/${project_id}/delete`, {
             method: "DELETE"
