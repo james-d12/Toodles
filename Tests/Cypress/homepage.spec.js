@@ -6,7 +6,7 @@ describe('Homepage Test', () => {
   
     it('opens the Landing Page', () => {
         cy.visit('http://localhost:8000');
-    
+
 
         /* Example code from restaurant - saved for reference.
         cy.get('#name').type('Mcdonalds')

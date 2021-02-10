@@ -28,14 +28,14 @@
 
 
 <div style="display: flex; justify-content: center;">
-    <button onclick="openForm();">New Project</button>
+    <button id="open-add-project-button" onclick="openForm();">New Project</button>
 </div>
 
 {{#each projects}}
 
 
 <!-- Add stuff for projects here -->
-<div class="Welcome">
+<div class="Welcome" id="{{this.name}}-{{this.id}}">
 
 <div>
     <section>
@@ -44,7 +44,7 @@
     <header style="background-image: url({{this.image}});"></header>
     <a href="/boards/{{this.id}}"> <h1 style="font-size: 150%;">{{this.name}}</h1> </a>
     <p>Description: {{this.description}}</p>
-    <button onclick="deleteProject({{this.id}});">Delete {{this.name}}</button>
+    <button id="delete-project-button" onclick="deleteProject({{this.id}});">Delete {{this.name}}</button>
        </article>
     </section>
 </div>
