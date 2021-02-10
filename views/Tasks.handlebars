@@ -47,6 +47,8 @@ Project Title -->
       	</form> 
 	</div>
 
+
+
 {{#each columns}}
 
 <div class="box" >
@@ -57,7 +59,8 @@ Project Title -->
 		</div>
 	</div>
 	<div id="{{this.name}}-list" class="tasks" >
-		{{#each this.tasks}}				
+		{{#each this.tasks}}
+				
 			<div class="draggable">
 				<p> {{this.name}} </p>
 				<p> {{this.description}} </p>
