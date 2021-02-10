@@ -2,13 +2,10 @@
     
     <!-- Display Logged in username -->
 
-    <p>Logged in as: </p>
-    <br>
-
     <!-- if the username has projects show them here, 
     and make them clickable-->
 
-<h1 style="text-align: center;">Your Projects</h1>
+<h1 style="text-align: center; margin-top: 25px;">Your Projects</h1>
 
  <div id="add-project-popup" class="input-box">
     <form class="add-project-form" action="/boards/new" method="POST">
@@ -38,16 +35,16 @@
 
 
 <!-- Add stuff for projects here -->
-<div class="container">
+<div class="Welcome">
 
 <div>
     <section>
         <article>
-            <!-- Fox - A project image might not be needed -->
-            <header style="background-image: url({{this.image}});"></header>
-            <a href="/boards/{{this.id}}"> <h1 style="font-size: 150%;">{{this.name}}</h1> </a>
-            <p>Description: {{this.description}}</p>
-            <button onclick="deleteProject({{this.id}});">Delete {{this.name}}</button>
+    <!-- Fox - A project image might not be needed -->
+    <header style="background-image: url({{this.image}});"></header>
+    <a href="/boards/{{this.id}}"> <h1 style="font-size: 150%;">{{this.name}}</h1> </a>
+    <p>Description: {{this.description}}</p>
+    <button onclick="deleteProject({{this.id}});">Delete {{this.name}}</button>
        </article>
     </section>
 </div>
