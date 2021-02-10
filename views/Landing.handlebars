@@ -23,14 +23,12 @@
 <div>
     <section>
         <article>
-    <!-- Fox - A project image might not be needed -->
-    <header style="background-image: url({{this.image}});"></header>
-    <a href="/boards/{{this.id}}"> <h1 style="font-size: 150%;">{{this.name}}</h1> </a>
-    <p>Description: {{this.description}}</p>
-    <button><a href="/boards/{{this.id}}/delete">Delete {{this.name}}</a></button>
-
+            <!-- Fox - A project image might not be needed -->
+            <header style="background-image: url({{this.image}});"></header>
+            <a href="/boards/{{this.id}}"> <h1 style="font-size: 150%;">{{this.name}}</h1> </a>
+            <p>Description: {{this.description}}</p>
+            <button onclick="deleteProject({{this.id}});">Delete {{this.name}}</button>
        </article>
- 
     </section>
 </div>
     <!-- Log out -->
@@ -42,3 +40,13 @@
     
 {{/each}}
 
+
+<script>
+    async function deleteProject(project_id){
+        fetch(`boards/${project_id}/delete`, {
+            method: "DELETE"
+        }).then(res =>
+            window.location = res.url 
+        );
+    }
+</script>
