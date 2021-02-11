@@ -48,9 +48,7 @@ exports.boardPage = async(req, res) => {
         const column = columns[i]
         for(let j = 0; j < column.tasks.length; j++){
             const task = column.tasks[j]
-           // console.log(task.Uid)
             const user = await User.findByPk(task.Uid)
-            console.log(user)
             
             //include: [
             //    {model: User, as: 'user'}
