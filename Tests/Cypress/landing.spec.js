@@ -12,7 +12,7 @@ describe('Landing Page Test', () => {
         cy.get('#add-project-url-input').type('https://www.dummyimage.com/image.png')
 
         cy.get('#add-project-button').click() 
-        cy.get('#Homework Project-52').should('exist')
+        cy.get('#Homework Project-51').should('exist')
     })
   
 })
