@@ -1,10 +1,6 @@
 const { validationResult } = require("express-validator")
 const { Project, Column, Task } = require("../Database/SequelizeClasses")
 
-const homepage = 'Home'
-const boardsPage = 'Landing'
-const boardPage = 'Tasks'
-
 /**
  * Create a new project.
  * @param {Request} req - The request that the caller has sent to the server.
@@ -24,7 +20,7 @@ exports.boardPageNew = async(req, res) => {
         image: image
     })
 
-    res.render(boardsPage)
+    res.redirect(`/boards`)
 }
 
 /**
@@ -47,5 +43,5 @@ exports.taskNew = async(req, res) => {
         Uid: user
     })
 
-    res.render(boardsPage)
+    res.redirect(`/boards/${req.params.id}`)
 }
