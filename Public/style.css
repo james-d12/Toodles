@@ -122,12 +122,20 @@ button {
 	box-shadow: 0px 0px 10px 2px red;
 }
 */
+
 .plusIcon{
-  position: relative;
-  left: 100px;
   cursor: default;
-  margin: 20px;
+  margin-left: 20px;
 }
+
+
+/* Fox fix this */
+/*
+.pluscontainer {
+	text-align: relative;
+	position:static;
+}
+*/
 
 .addFormContainer{
 	width: 300px;
@@ -136,10 +144,12 @@ button {
 	position: absolute;
 	z-index: 100;
 	display: none;
+
 }
 
+
 .plusIcon:hover {
-	color: yellow;
+	color: blue;
 }
 
 
