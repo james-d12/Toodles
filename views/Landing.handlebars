@@ -17,10 +17,6 @@
             <input id="add-project-description-input" type="text" name="description" minlength="3" maxlength="300" required>
             <label for="description"><b>Description</b></label>
         </div>
-        <div class="user-box">
-            <input id="add-project-url-input" type="url" name="image" pattern="https://.*" required>
-            <label for="image"><b>Image</b></label>
-        </div>
         <button id="add-project-button" class="input-button" type="submit"> <B>Add</B> </button>
         <button id="close-project-button" class="input-button" onclick="closeForm();"> <B>Close</B> </button>
     </form> 
@@ -41,10 +37,10 @@
     <section>
         <article>
     <!-- Fox - A project image might not be needed -->
-    <header style="background-image: url({{this.image}});"></header>
+    <header></header>
     <a href="/boards/{{this.id}}"> <h1 style="font-size: 150%;">{{this.name}}</h1> </a>
     <p>Description: {{this.description}}</p>
-    <button id="delete-project-button" onclick="deleteProject({{this.id}});">Delete {{this.name}}</button>
+    <button id="delete-project-button-{{this.id}}" onclick="deleteProject({{this.id}});">Delete {{this.name}}</button>
        </article>
     </section>
 </div>

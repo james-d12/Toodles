@@ -22,12 +22,12 @@ exports.boardPageDelete = async(req, res) => {
  * @param {Response} res - The reponse the server will give.
  */
 exports.taskDelete = async(req, res) => {
-    const task = await Task.findByPk(req.params.id)
-
+    const task = await Task.findByPk(req.params.tid)
+    
     if(task != null){
         task.destroy()
-        res.redirect(`/boards/${req.params.pid}/`)
     } else{
         res.status(400).send("Could Not Find Task.")
     }
+    res.redirect(`/boards/${req.params.pid}`)
 }
