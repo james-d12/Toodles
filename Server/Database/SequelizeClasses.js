@@ -78,6 +78,8 @@ Project.init({
 
 User.hasMany(Task, {as: "tasks", foreignKey: 'Uid'})
 Task.belongsTo(User, {foreignKey: 'Uid'})
+//Task.hasOne(User, {as: "user", foreignKey: 'Tid'})
+//User.belongsTo(Task, {foreignKey: 'Tid'})
 
 Column.hasMany(Task, {as: 'tasks', foreignKey: 'Cid'});
 Task.belongsTo(Column, {foreignKey: 'Cid'});
