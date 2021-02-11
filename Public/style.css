@@ -124,20 +124,20 @@ button {
 */
 
 #plusIcon{
-  position: absolute;
-  left: 100px;
+	/*float: right;*/
+
   cursor: default;
-  margin: 20px;
-  z-index: 1;
+margin-left: 20px;
 }
 
 
 /* Fox fix this */
-
+/*
 .pluscontainer {
 	text-align: relative;
 	position:static;
 }
+*/
 
 .addFormContainer{
 	width: 300px;
