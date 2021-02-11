@@ -123,11 +123,9 @@ button {
 }
 */
 
-#plusIcon{
-	/*float: right;*/
-
+.plusIcon{
   cursor: default;
-margin-left: 20px;
+  margin-left: 20px;
 }
 
 
@@ -149,9 +147,10 @@ margin-left: 20px;
 
 }
 
-#plusIcon:hover {
+
+.plusIcon:hover {
 	color: blue;
-  }
+}
 
 
 .forms{
@@ -200,8 +199,3 @@ box-shadow: -3px 2px rgba(0, 0, 0, 0.205);
 
 /*Fox - Removes underline from links */
 a {text-decoration: none;}
-
-.box-sub-content{
-	position:relative;
-}
-

@@ -6,20 +6,28 @@ const { Project, Column, Task } = require("../Database/SequelizeClasses")
  * @param {Response} res - The reponse the server will give.
  */
 exports.boardPageDelete = async(req, res) => {
-    Project.findByPk(req.params.id).then(project => {
+    const project = await Project.findByPk(req.params.id)
+
+    if(project != null){
         project.destroy()
         res.redirect(`/boards`)
-    })
+    } else{
+        res.status(400).send("Could Not Find Project.")
+    }
 }
-
+    
 /**
  * Deletes a specific task from a column.
  * @param {Request} req - The request that the caller has sent to the server.
  * @param {Response} res - The reponse the server will give.
  */
 exports.taskDelete = async(req, res) => {
-    Task.findByPk(req.params.id).then(task => {
+    const task = await Task.findByPk(req.params.tid)
+    
+    if(task != null){
         task.destroy()
-        res.redirect(`/boards/${req.params.id}`)
-    })
+    } else{
+        res.status(400).send("Could Not Find Task.")
+    }
+    res.redirect(`/boards/${req.params.pid}`)
 }

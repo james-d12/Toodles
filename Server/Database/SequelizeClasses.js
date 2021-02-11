@@ -2,7 +2,8 @@ const {Sequelize, DataTypes, Model} = require('sequelize');
 
 const sequelize = new Sequelize('database', 'username', 'password', {
     dialect: 'sqlite',
-    storage: './Server/Database/Todo.sqlite'
+    storage: './Server/Database/Todo.sqlite',
+    logging: true 
 });
 
 /**
@@ -66,8 +67,7 @@ Column.init({
 
 Project.init({
     name: DataTypes.STRING,
-    description: DataTypes.TEXT,
-    image: DataTypes.STRING,
+    description: DataTypes.TEXT
 }, 
 {
     sequelize,
@@ -78,6 +78,8 @@ Project.init({
 
 User.hasMany(Task, {as: "tasks", foreignKey: 'Uid'})
 Task.belongsTo(User, {foreignKey: 'Uid'})
+//Task.hasOne(User, {as: "user", foreignKey: 'Tid'})
+//User.belongsTo(Task, {foreignKey: 'Tid'})
 
 Column.hasMany(Task, {as: 'tasks', foreignKey: 'Cid'});
 Task.belongsTo(Column, {foreignKey: 'Cid'});

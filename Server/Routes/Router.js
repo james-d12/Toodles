@@ -15,7 +15,6 @@ router.post(
     '/boards/new', 
     check('name').isLength({min: 3, max: 40}).isString().trim().escape(),
     check('description').isLength({min: 3, max: 300}).isString().trim().escape(),
-    check('image').matches('https://.*').isURL().not().isEmpty().trim().escape(),
     Post.boardPageNew
 )
 
@@ -32,7 +31,6 @@ router.put(
     '/boards/:id/edit',
     check('name').isLength({min: 3, max: 40}).isString().trim().escape(),
     check('description').isLength({min: 3, max: 300}).isString().trim().escape(),
-    check('image').matches('https://.*').isURL().not().isEmpty().trim().escape(),
     Put.boardPageEdit
 )
 
@@ -46,6 +44,6 @@ router.put(
 )
 
 router.delete('/boards/:id/delete', Delete.boardPageDelete)
-router.delete('/boards/:pid/tasks/:tid/delete', Delete.taskDelete)
+router.delete('/boards/:pid/task/:tid/delete', Delete.taskDelete)
 
 module.exports = router

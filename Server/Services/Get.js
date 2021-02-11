@@ -1,7 +1,7 @@
 
 //const { Col } = require("sequelize/types/lib/utils")
 
-const { Project, Column, Task } = require("../Database/SequelizeClasses")
+const { Project, Column, Task, User } = require("../Database/SequelizeClasses")
 
 const homepage = 'Home'
 const boardsPage = 'Landing'
@@ -37,9 +37,25 @@ exports.boardsPage = async(req, res) => {
 exports.boardPage = async(req, res) => {
     const project = await Project.findByPk(req.params.id)
     const columns = await project.getColumns({
-        include: [{model: Task, as: 'tasks'}],
+
+        include: [
+            {model: Task, as: 'tasks' }
+        ],
         nest: true 
     })
+
+    for(let i = 0; i < columns.length; i++){
+        const column = columns[i]
+        for(let j = 0; j < column.tasks.length; j++){
+            const task = column.tasks[j]
+            const user = await User.findByPk(task.Uid)
+            
+            //include: [
+            //    {model: User, as: 'user'}
+            //]
+        }
+
+    }
 
     res.render(boardPage, {project, columns})
 }
