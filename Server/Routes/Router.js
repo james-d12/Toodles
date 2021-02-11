@@ -46,6 +46,6 @@ router.put(
 )
 
 router.delete('/boards/:id/delete', Delete.boardPageDelete)
-router.delete('/boards/:pid/tasks/:tid/delete', Delete.taskDelete)
+router.delete('/boards/:pid/task/:tid/delete', Delete.taskDelete)
 
 module.exports = router
