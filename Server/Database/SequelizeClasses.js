@@ -2,7 +2,8 @@ const {Sequelize, DataTypes, Model} = require('sequelize');
 
 const sequelize = new Sequelize('database', 'username', 'password', {
     dialect: 'sqlite',
-    storage: './Server/Database/Todo.sqlite'
+    storage: './Server/Database/Todo.sqlite',
+    logging: true 
 });
 
 /**
@@ -66,8 +67,7 @@ Column.init({
 
 Project.init({
     name: DataTypes.STRING,
-    description: DataTypes.TEXT,
-    image: DataTypes.STRING,
+    description: DataTypes.TEXT
 }, 
 {
     sequelize,

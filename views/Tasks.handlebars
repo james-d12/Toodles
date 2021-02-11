@@ -55,34 +55,21 @@ Project Title -->
 	<div class="box-sub" >
 		<div class="box-sub-content">
 			{{this.name}}
-			<span id = "plusIcon" onclick="openForm()">&#43;</span>
+			<span class="plusIcon" id="plusIcon-{{this.id}}" onclick="openForm()">&#43;</span>
 		</div>
 	</div>
 	<div id="{{this.name}}-list" class="tasks" >
 		{{#each this.tasks}}
-				
-			<div class="draggable">
+
+			<div class="draggable" id="{{this.Uid}}-{{this.id}}">
 				<p> {{this.name}} </p>
 				<p> {{this.description}} </p>
+			<button onclick="deleteTask({{../../project.id}}, {{this.id}});">Delete</button> 
 			</div>			
 		{{/each}}
 	</div>            
 </div>
 {{/each}}
-
-	<!--
-	<div class="box">
-			<div class="box-sub">In Progress</div>
-			<div id="working" class="tasks">                
-			</div>
-		</div>
-
-    <div class="box">
-			<div class="box-sub">Finished</div>
-			<div id="working" class="tasks">                
-			</div>
-		</div>
-	-->
 </div>
 
 <script>
@@ -127,6 +114,14 @@ function closeForm(){
     if(formAdd.style.display != "none"){
         formAdd.style.display = "none"
     }
+}
+
+async function deleteTask(project_id, task_id){
+    fetch(`${project_id}/task/${task_id}/delete`, {
+        method: "DELETE"
+    }).then(res =>
+        window.location = res.url 
+    );
 }
 	
 </script>

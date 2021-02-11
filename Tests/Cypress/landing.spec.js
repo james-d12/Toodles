@@ -7,12 +7,18 @@ describe('Landing Page Test', () => {
         cy.visit('http://localhost:8000/boards');
         cy.get('#open-add-project-button').click()
 
-        cy.get('#add-project-name-input').type('Homework Project')
+        cy.get('#add-project-name-input').type('Homework-Project')
         cy.get('#add-project-description-input').type('Contains tasks related to doing homework.')
-        cy.get('#add-project-url-input').type('https://www.dummyimage.com/image.png')
 
         cy.get('#add-project-button').click() 
-        cy.get('#Homework Project-51').should('exist')
+        cy.get('#Homework-Project-4').should('exist')
+    })
+
+    it('Delete a project', () => {
+        cy.visit('http://localhost:8000/boards');
+        cy.get('#delete-project-button-4').click()
+
+        cy.get('#Homework-Project-4').should('not.exist')
     })
   
 })
