@@ -14,12 +14,21 @@ exports.boardPageNew = async(req, res) => {
 
     const { name, description, image } = req.body 
 
-    await Project.create({
+
+    /* we  will never speak of this moment */
+    Project.create({
         name: name, 
         description: description, 
         image: image
+    }).then(data => {
+        const Pid = data.id 
+        Column.create({ name: "Todo", Pid: Pid}).then(
+            Column.create({ name: "In-Progress", Pid: Pid}).then(
+                Column.create({ name: "Done", Pid: Pid})
+            )
+        )
     })
-
+    
     res.redirect(`/boards`)
 }
 
